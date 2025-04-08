@@ -1,4 +1,4 @@
-def calculate(example):
+def calculate(example: str) -> (int, float):
     first = 0
     second = 0
     sign = ""
@@ -10,7 +10,7 @@ def calculate(example):
             first = int(temp)
             temp = ""
         else:
-            temp += char
+            temp += chargit 
     second = int(temp)
 
     match sign:
