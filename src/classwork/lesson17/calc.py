@@ -10,7 +10,7 @@ def calculate(example: str) -> (int, float):
             first = int(temp)
             temp = ""
         else:
-            temp += chargit 
+            temp += char
     second = int(temp)
 
     match sign:
