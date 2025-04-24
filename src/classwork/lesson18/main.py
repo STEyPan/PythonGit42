@@ -41,4 +41,20 @@ def flower_bed(flowers):
     return max_flowers
 
 
-print(flower_bed("001001"))
+print(flower_bed("001001000000"))
+
+def flowers_bed_rec(flowers, i = 0, countEmpty = 0, max_flowers = 0):
+    if i == len(flowers):
+        if countEmpty > max_flowers:
+            max_flowers = countEmpty
+        return max_flowers
+    if flowers[i] == "0":
+        return flowers_bed_rec(flowers, i + 1, countEmpty+1, max_flowers)
+    else:
+        countEmpty -= 1
+        if countEmpty > max_flowers:
+            max_flowers = countEmpty
+        countEmpty = -1
+        return flowers_bed_rec(flowers, i + 1, countEmpty, max_flowers)
+
+print(flowers_bed_rec("001001000000"))
