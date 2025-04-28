@@ -1,20 +1,37 @@
 from random import randint
 
 
-def makeRandomList():
+def makeRandomList() -> list[int]:
+    '''
+    Функция генерирует список случаныйх чисел.
+    :return: список случайных чисел (list[int])
+    '''
     return [randint(-10,10) for _ in range(10)]
 
-def sumLists(lists):
+def sumLists(lists: list) -> list:
+    '''
+    Функция объединяет все списки в один список.
+    :param lists: список, содержащий списки (list[list])
+    :return: объединенный список (list)
+    '''
     sum_lists = []
 
     for list in lists:
         sum_lists += list
+        # sum_lists.extend(list)
 
     return sum_lists
 
     # return [item for sublist in lists for item in sublist]
 
-def initLists(amount):
+def initLists(amount: int) -> list:
+    '''
+    Функция создает заданное количество списков со случайными числами,
+    выводит в консоль сообщение с номером списка и его содержимым,
+    и добавляет их в общий список.
+    :param amount: количество списков (int)
+    :return: список со списками (list[list])
+    '''
     lists = []
 
     for i in range(amount):
@@ -23,9 +40,17 @@ def initLists(amount):
         print(f"Список №{i+1}: {list}")
     print()
 
-    return sumLists(lists)
+    return lists
 
-def BubbleSorted(list, is_reverse=False):
+def BubbleSorted(list: list[int], is_reverse: bool = False) -> list[int]:
+    '''
+    Функция пузырьковым методом сортирует полученный список в порядке возрастания (по-умолчанию).
+    Если параметр is_reverse=True, то возвращает отсортированный список в порядке убывания.
+    :param list: список с числами (list[int])
+    :param is_reverse: выбор сортировки списка: True - в порядке убывания,
+    False - в порядке возрастания (bool)
+    :return: отсортированный список чисел (list[int])
+    '''
     i = 1
 
     while i < len(list):
@@ -51,7 +76,15 @@ def BubbleSorted(list, is_reverse=False):
     return list
 
 
-def linearSearch(list, target) -> int:
+def linearSearch(list: list[int], target: int) -> int:
+    '''
+    Функция принимает список чисел и искомый элемент в виде числа.
+    С помощью линейного поиска проходимся по списку, и если число есть в списке возвращает его индекс,
+    если нет возвращает -1.
+    :param list: список чисел (list[int])
+    :param target: искомый элемент в виде числа (int)
+    :return: индекс элемента (int)
+    '''
 
     for index, elem in enumerate(list):
         if elem == target:
@@ -59,7 +92,13 @@ def linearSearch(list, target) -> int:
 
     return -1
 
-def InteractiveMenu(list):
+def InteractiveMenu(list: list[int]) -> None:
+    '''
+    Функция принимает в себя список чисел (list[int]), и в зависимости от выбора пользователя
+    выводит в консоль реультат выполнения выбранной функции.
+    :param list: список с числами (list[int])
+    :return: None
+    '''
     choice = ""
 
     while choice != "3":
@@ -94,8 +133,16 @@ def InteractiveMenu(list):
                 print("Нет такой команды, попробуйте снова!")
 
 
-def main():
-    sum_lists = initLists(4)
+def main() -> None:
+    '''
+    Функция инициализирует список со списками случайных чисел,
+    объединяет их с помощью функции sumLists(), выводит результат объедения в консоль.
+    Далее вызывается функция InteractiveMenu()
+    и в качестве параметра в неё передается объединенный список.
+    :return: None
+    '''
+    lists = initLists(4)
+    sum_lists = sumLists(lists)
     print(f"Объединенный список: {sum_lists}")
     InteractiveMenu(sum_lists)
 
