@@ -1,8 +1,7 @@
 from random import randint
 
-from searching import LinearSearch
-
-from sorting import BubbleSort
+from searching import BibarySearch
+from sorting import MergeSort
 
 
 def makeRandomList() -> list[int]:
@@ -47,6 +46,22 @@ def initLists(amount: int) -> list:
     return lists
 
 
+def LinearSearch(list: list[int], target: int) -> int:
+    '''
+    Функция принимает список чисел и искомый элемент в виде числа.
+    С помощью линейного поиска проходимся по списку, и если число есть в списке возвращает его индекс,
+    если нет возвращает -1.
+    :param list: список чисел (list[int])
+    :param target: искомый элемент в виде числа (int)
+    :return: индекс элемента (int)
+    '''
+
+    for index, elem in enumerate(list):
+        if elem == target:
+            return index
+
+    return -1
+
 def InteractiveMenu(list: list[int]) -> None:
     '''
     Функция принимает в себя список чисел (list[int]), и в зависимости от выбора пользователя
@@ -69,19 +84,20 @@ def InteractiveMenu(list: list[int]) -> None:
                 sort_choice = input(f"\nВы хотите отсортировать список по возрастанию (y/n)? ")
 
                 if sort_choice.lower() == "y":
-                    sorted_list = BubbleSort(list)
+                    sorted_list = MergeSort(list)
                     print(f"\nОтсортированный список по возрастанию: {sorted_list}")
 
                 else:
-                    sorted_list = BubbleSort(list, is_reverse=True)
+                    sorted_list = MergeSort(list)[::-1]
                     print(f"\nОтсортированный список по убыванию: {sorted_list}")
 
             case "2":
                 target = int(input(f"\nВведите элемент индекс которого Вы хотите найти: "))
-                search_result = LinearSearch(sorted_list, target)
+                search_result = BibarySearch(sorted_list, target)
 
                 if search_result >= 0:
                     print(f"\nИндекс элемента {target}: [{search_result}]")
+
                 else:
                     print(f"\nЭлемент [{target}] в списке не обнаружен :(")
 
