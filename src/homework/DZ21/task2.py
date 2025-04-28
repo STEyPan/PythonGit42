@@ -1,12 +1,11 @@
 from random import randint
-
-from searching import BibarySearch
+from searching import BinarySearch
 from sorting import MergeSort
 
 
 def makeRandomList() -> list[int]:
     '''
-    Функция генерирует список случаныйх чисел.
+    Функция генерирует список случайных чисел.
     :return: список случайных чисел (list[int])
     '''
     return [randint(-10,10) for _ in range(10)]
@@ -46,22 +45,6 @@ def initLists(amount: int) -> list:
     return lists
 
 
-def LinearSearch(list: list[int], target: int) -> int:
-    '''
-    Функция принимает список чисел и искомый элемент в виде числа.
-    С помощью линейного поиска проходимся по списку, и если число есть в списке возвращает его индекс,
-    если нет возвращает -1.
-    :param list: список чисел (list[int])
-    :param target: искомый элемент в виде числа (int)
-    :return: индекс элемента (int)
-    '''
-
-    for index, elem in enumerate(list):
-        if elem == target:
-            return index
-
-    return -1
-
 def InteractiveMenu(list: list[int]) -> None:
     '''
     Функция принимает в себя список чисел (list[int]), и в зависимости от выбора пользователя
@@ -93,7 +76,7 @@ def InteractiveMenu(list: list[int]) -> None:
 
             case "2":
                 target = int(input(f"\nВведите элемент индекс которого Вы хотите найти: "))
-                search_result = BibarySearch(sorted_list, target)
+                search_result = BinarySearch(sorted_list, target)
 
                 if search_result >= 0:
                     print(f"\nИндекс элемента {target}: [{search_result}]")

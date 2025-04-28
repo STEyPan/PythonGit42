@@ -16,7 +16,7 @@ def LinearSearch(input_list: list[int], target: int) -> int:
 
     return -1
 
-def BibarySearch(input_list: list[int], target: int) -> int:
+def BinarySearch(input_list: list[int], target: int) -> int:
     '''
     Функция принимает список чисел и искомы элемент в виде числа.
     С помощью бинарного поиска находим искомый элемент и выводим его индекс.
@@ -60,9 +60,9 @@ def BibarySearch(input_list: list[int], target: int) -> int:
             return middle
 
         if target > input_list[middle]:
-            low_half = start = middle
+            low_half = middle
         else:
-            high_half = start = middle
+            high_half = middle
 
     else:
         return -1

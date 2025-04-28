@@ -1,13 +1,11 @@
 from random import randint
-
 from searching import LinearSearch
-
 from sorting import BubbleSort
 
 
 def makeRandomList() -> list[int]:
     '''
-    Функция генерирует список случаныйх чисел.
+    Функция генерирует список случайных чисел.
     :return: список случайных чисел (list[int])
     '''
     return [randint(-10,10) for _ in range(10)]
