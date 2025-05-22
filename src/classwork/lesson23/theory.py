@@ -21,6 +21,7 @@ from oper import Oper
 if __name__ == "__main__":
     var_1 = Oper(10)
     var_2 = Oper(0)
+    var_3 = Oper(11)
 
     if var_1:
         print(f"var_1 is True")
@@ -30,4 +31,6 @@ if __name__ == "__main__":
         print(f"var_2 is False")
 
     if var_1 != "Hello":
-        print(f"var_1 is True")
+        print(f"var_1 is False")
+
+    print(var_3)

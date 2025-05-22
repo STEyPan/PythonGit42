@@ -31,7 +31,6 @@ stack_2 = Stack()
 print(stack_2.push_item(1))
 print(stack_2.push_item(2))
 print(stack_2.push_item(3))
-pr
 stack_2[72] = 10
 print(stack_2.push_item(4))
 

@@ -3,7 +3,7 @@ class Oper:
     __value = 0
 
     def __init__(self, value: int = 0):
-        pass
+        self.__value = value
 
     def __del__(self):
         pass
@@ -166,4 +166,7 @@ class Oper:
             pass
         else:
             False
+
+    def __str__(self):
+        return f"{self.__value}"
 

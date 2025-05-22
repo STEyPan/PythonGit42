@@ -49,29 +49,29 @@ def RomanToInt(romeNumber):
         "L" : 50,
         "C" : 100
     }
-    levels = "IVXLC"
+
     lvl = 0
     temp = 0
     result = 0
 
-    for digit in romeNumber[::-1]:
+    for char in romeNumber[::-1]:
 
-        current_digit = rome_to_arab[digit]
-
-        if current_digit < pre_digit:
-            arab_number -= current_digit
+        if rome_to_arab[char] >= lvl:
+            result += temp
+            lvl = rome_to_arab[char]
+            temp = rome_to_arab[char]
 
         else:
-            arab_number += current_digit
+            temp -= rome_to_arab[char]
 
-        pre_digit = current_digit
-
-    return arab_number
+    result += temp
 
 
+    return result
 
+print(RomanToInt("XIV"))
 
-print(RomanToInt("XL"))
+print(RomanToInt("IXCVXXL"))
 
 
 
