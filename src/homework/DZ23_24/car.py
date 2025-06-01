@@ -62,9 +62,9 @@ class Car:
         return self.__release
 
     @car_release.setter
-    def car_release(self, new_relese: str = None):
-        if new_relese != None:
-            self.__release = new_relese
+    def car_release(self, new_release: int = None):
+        if new_release != None:
+            self.__release = new_release
 
     @property
     def car_fabricator(self):
@@ -98,7 +98,7 @@ class Car:
         return self.__price
 
     @car_price.setter
-    def car_price(self, new_price: str = None):
+    def car_price(self, new_price: int = None):
         if new_price != None:
             self.__price = new_price
 
