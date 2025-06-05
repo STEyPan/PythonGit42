@@ -2,6 +2,18 @@ from automobile import Automobile
 
 class SUV(Automobile):
 
+    def forward_moving(self):
+        return f"{self._name} {super().forward_moving()}"
+
+    def backward_moving(self):
+        return f"{self._name} {super().backward_moving()}"
+
+    def hand_brake(self):
+        return f"{self._name} {super().hand_brake()}"
+
+    def start_engine(self):
+        return f"{super().start_engine()} - Бррр-бррр"
+
     __frame = True
     __full_drive = True
     __blocking = True

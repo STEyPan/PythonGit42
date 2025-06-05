@@ -1,6 +1,18 @@
 from automobile import Automobile
 
 class Cargo(Automobile):
+    def forward_moving(self):
+        return f"{self._name} {super().forward_moving()}"
+
+    def backward_moving(self):
+        return f"{self._name} {super().backward_moving()}"
+
+    def hand_brake(self):
+        return f"{self._name} {super().hand_brake()}"
+
+    def start_engine(self):
+        return f"{super().start_engine()} - Друм-друм"
+
     __tonnage = 0
     __trailer = True
     __sleeping_place = True
@@ -30,12 +42,12 @@ class Cargo(Automobile):
     def tonnage(self):
         return self.__tonnage
 
-    @tonnage.setter
-    def tonnage(self, new_tonnage : float = None):
-        if new_tonnage != None and isinstance(new_tonnage, float):
-            self.__tonnage = new_tonnage
-        else:
-            raise "Ошибка типов"
+    # @tonnage.setter
+    # def tonnage(self, new_tonnage : float = None):
+    #     if new_tonnage != None and isinstance(new_tonnage, float):
+    #         self.__tonnage = new_tonnage
+    #     else:
+    #         raise "Ошибка типов"
 
     @property
     def trailer(self):
