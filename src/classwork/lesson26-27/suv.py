@@ -16,7 +16,7 @@ class SUV(Automobile):
                  frame : bool = True,
                  full_drive : bool = True,
                  blocking : bool = True,
-                 type_fuel = "Тип топлива"):
+                 type_fuel : str = "Тип топлива"):
 
         super().__init__(name, color, power_engine, price, max_speed)
         self.__frame = frame
@@ -24,18 +24,48 @@ class SUV(Automobile):
         self.__blocking = blocking
         self.__type_fuel = type_fuel
 
-
+    @property
     def frame(self):
         return self.__frame
 
+    @frame.setter
+    def frame(self, new_frame : bool = None):
+        if new_frame != None and isinstance(new_frame, bool):
+            self.__frame = new_frame
+        else:
+            raise "Ошибка типов"
+
+    @property
     def full_drive(self):
         return self.__full_drive
 
+    @full_drive.setter
+    def full_drive(self, new_full_drive : bool = None):
+        if new_full_drive != None and isinstance(new_full_drive, bool):
+            self.__full_drive = new_full_drive
+        else:
+            raise "Ошибка типов"
+
+    @property
     def blocking(self):
         return self.__blocking
 
+    @blocking.setter
+    def blocking(self, new_blocking: bool = None):
+        if new_blocking != None and isinstance(new_blocking, bool):
+            self.__full_drive = new_blocking
+        else:
+            raise "Ошибка типов"
+    @property
     def type_fuel(self):
         return self.__type_fuel
+
+    @type_fuel.setter
+    def type_fuel(self, new_type_fuel: str = None):
+        if new_type_fuel != None and isinstance(new_type_fuel, str):
+            self.__full_drive = new_type_fuel
+        else:
+            raise "Ошибка типов"
 
     def get_info(self):
         return (f"Внедорожник:\n"
@@ -44,48 +74,3 @@ class SUV(Automobile):
                 f"Полный привод: {"Да" if self.__full_drive else "Нет"}\n"
                 f"Блокировка: {"Да" if self.__blocking else "Нет"}\n"
                 f"Тип топлива: {self.__type_fuel}")
-
-
-    # @property
-    # def name(self):
-    #     return self._name
-    #
-    # @name.setter
-    # def name(self, new_name: str = None):
-    #     if new_name != None:
-    #         self._name = new_name
-    #
-    # @property
-    # def color(self):
-    #     return self._color
-    #
-    # @color.setter
-    # def color(self, new_color: str = None):
-    #     if new_color != None:
-    #         self._color = new_color
-    #
-    # @property
-    # def power_engine(self):
-    #     return self._power_engine
-    #
-    # @power_engine.setter
-    # def power_engine(self, new_power_engine: float = None):
-    #     if new_power_engine != None:
-    #         self._power_engine = new_power_engine
-    #
-    # @property
-    # def price(self):
-    #     return self._price
-    #
-    # @price.setter
-    # def price(self, new_price: float = None):
-    #     if new_price != None:
-    #         self._price = new_price
-    # @property
-    # def max_speed(self):
-    #     return self._max_speed
-    #
-    # @max_speed.setter
-    # def max_speed(self, new_max_speed: int = None):
-    #     if new_max_speed != None:
-    #         self._max_speed = new_max_speed

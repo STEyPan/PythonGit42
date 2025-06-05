@@ -60,9 +60,15 @@ class Automobile(abc.ABC):
         if new_name != None:
             self._name = new_name
 
+        if isinstance(new_name, str):
+            self._name = new_name
+        else:
+            raise "Ошибка типов"
+
     @abc.abstractmethod
     def color(self):
         return self._color
+
     @property
     def color(self):
         return self._color
@@ -71,6 +77,11 @@ class Automobile(abc.ABC):
     def color(self, new_color: str = None):
         if new_color != None:
             self._color = new_color
+
+        if isinstance(new_color, str):
+            self._name = new_color
+        else:
+            raise "Ошибка типов"
 
     @abc.abstractmethod
     def power_engine(self):
@@ -85,6 +96,11 @@ class Automobile(abc.ABC):
         if new_power_engine != None:
             self._power_engine = new_power_engine
 
+        if isinstance(new_power_engine, float):
+            self._name = new_power_engine
+        else:
+            raise "Ошибка типов"
+
     @abc.abstractmethod
     def price(self):
         return self._price
@@ -98,6 +114,11 @@ class Automobile(abc.ABC):
         if new_price != None:
             self._price = new_price
 
+        if isinstance(new_price, float):
+            self._name = new_price
+        else:
+            raise "Ошибка типов"
+
     @abc.abstractmethod
     def max_speed(self):
         return self._max_speed
@@ -109,6 +130,11 @@ class Automobile(abc.ABC):
     def max_speed(self, new_max_speed: int = None):
         if new_max_speed != None:
             self._max_speed = new_max_speed
+
+        if isinstance(new_max_speed, int):
+            self._name = new_max_speed
+        else:
+            raise "Ошибка типов"
 
     @abc.abstractmethod
     def get_info(self):

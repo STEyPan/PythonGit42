@@ -27,16 +27,21 @@ class Sedan(Automobile):
 
     @transmission_box.setter
     def transmission_box(self, new_transmission_box : str = None):
-        if new_transmission_box != None:
+        if new_transmission_box != None and isinstance(new_transmission_box, str):
             self.__transmission_box = new_transmission_box
+        else:
+            raise "Ошибка типов"
+
     @property
     def additional_option(self):
         return self.__transmission_box
 
     @additional_option.setter
     def additional_option(self, new_additional_option: int = None):
-        if new_additional_option != None:
+        if new_additional_option != None and isinstance(new_additional_option, int):
             self.__additional_option = new_additional_option
+        else:
+            raise "Ошибка типов"
 
     def get_info(self):
         return (f"Седан:\n"
