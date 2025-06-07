@@ -14,7 +14,8 @@ class Circle:
         return circumference
 
     def __str__(self):
-        return f"{self.__radius}"
+        return (f"Радиус круга: {self.__radius}\n"
+                f"Длина круга: {self.get_circumference()}")
 
     def __eq__(self, other): # ==
         if isinstance(other, Circle):
@@ -47,23 +48,36 @@ class Circle:
             return False
 
     def __add__(self, other): # +
-        return Circle(self.__radius + other)
+        if isinstance(other, (int, float)):
+            return Circle(self.__radius + other)
+        else:
+            raise "Ошибка типов"
 
-    def __sub__(self, other):
-        return Circle(self.__radius - other)
+    def __sub__(self, other): # -
+        if isinstance(other, (int, float)):
+            return Circle(self.__radius - other)
+        else:
+            raise "Ошибка типов"
 
-    def __iadd__(self, other):
-        self.__radius += other
-        return self
+    def __iadd__(self, other): # +=
+        if isinstance(other, (int, float)):
+            self.__radius += other
+            return self
+        else:
+            raise "Ошибка типов"
 
-    def __isub__(self, other):
-        self.__radius -= other
-        return self
+    def __isub__(self, other): # -=
+        if isinstance(other, (int, float)):
+            self.__radius -= other
+            return self
+        else:
+            raise "Ошибка типов"
 
 
 circle_1 = Circle(2)
-circle_2 = Circle(2)
-print(circle_1.get_circumference())
+circle_2 = Circle(3)
+print(f"Длина circle_1: {circle_1.get_circumference()}")
+print(f"Длина circle_2: {circle_2.get_circumference()}")
 print(circle_1 == circle_2)
 print(circle_1 == 2)
 print(circle_1 <= circle_2)
