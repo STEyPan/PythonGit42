@@ -29,7 +29,7 @@ class Floor(Home):
         return sum_area + sum_input_power
 
     def __str__(self):
-        return (f"\n------ {self.__floor_number} этаж ------\n"
+        return (f"\n------------ {self.__floor_number} этаж ------------\n"
                 f"Общая площадь этажа: {self._area} кв/м\n"
                 f"Мощность входной электрики: {self._input_power} к/ват\n"
                 f"Количество комнат: {self.__count_rooms}\n"

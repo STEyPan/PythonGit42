@@ -23,7 +23,7 @@ class AdditionalBuildings(Home):
 
     def __str__(self):
         return (f"\n------ Дополнительные постройки ------\n"
-                f"-{"\n-".join(self.__buildings)}\n"
+                f"\t-{"\n\t-".join(self.__buildings)}\n"
                 f"Общая площадь построек: {self._area} кв/м\n"
                 f"Мощность входной электрики: {self._input_power} к/ват\n"
                 f"Общая стоимость построек: {self.total_cost():,} рублей")

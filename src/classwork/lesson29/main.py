@@ -42,9 +42,9 @@ def estimate(*objs: Home):
 
     for obj in objs:
         total_cost += obj.total_cost()
-        text_estimate += f"{obj.__str__()}\n---------------------"
+        text_estimate += f"{obj.__str__()}\n-----------------------------------"
 
-    return (f"-------СМЕТА ДОМА-------\n"
+    return (f"-------------СМЕТА ДОМА-------------\n"
             f"{text_estimate}\n"
             f"Общая стоимость всего дома: {total_cost:,} рублей")
 

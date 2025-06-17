@@ -1,0 +1,49 @@
+{
+    "key": "value",
+    "string": "string",
+    "int": 10,
+    "float": 3.14,
+    "bool": true,
+    "key_5": {
+        "key_obj_1": 1,
+        "key_obj_2": 2,
+        "key_obj_3": 3
+    },
+    "key_6": [
+        "value",
+        "value_2",
+        "value_3",
+        "value_4"
+    ],
+    "total": {
+        "key_obj_1": 1,
+        "key_obj_2": 2,
+        "key_obj_3": 3,
+        "key_array": [
+            {
+                "string": "value",
+                "int": 10,
+                "float": 3.14,
+                "bool": true
+            },
+            {
+                "string": "string",
+                "int": 10,
+                "float": 3.14,
+                "bool": true
+            },
+            {
+                "string": "string",
+                "int": 10,
+                "float": 3.14,
+                "bool": true
+            },
+            {
+                "string": "string",
+                "int": 10,
+                "float": 3.14,
+                "bool": true
+            }
+        ]
+    }
+}

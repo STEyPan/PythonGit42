@@ -40,7 +40,7 @@ class Roof(Home):
 
 
     def __str__(self):
-        return (f"\n------ Крыша ------\n"
+        return (f"\n------------ Крыша ------------\n"
                 f"Тип крыши: {self.__type_roof}\n"
                 f"Наличие чердака: {"да" if self._area > 0 else "нет"}\n"
                 f"{f"Общая площадь чердака: {self._area} кв/м\n" if self._area > 0 else ""}"

@@ -52,9 +52,9 @@ class Basement(Home):
         return sum_input_power + basement_price + communications_price
 
     def __str__(self):
-        return (f"\n------ Подвал ------\n"
+        return (f"\n------------ Подвал ------------\n"
                 f"Тип фундамента: {self.__type_basement}\n"
                 f"Подводимые коммуникации:\n"
-                f"-{"\n-".join(self.__communications)}\n"
+                f"\t-{"\n\t-".join(self.__communications)}\n"
                 f"Мощность входной электрики: {self._input_power} к/ват\n"
                 f"Общая стоимость: {self.total_cost():,} рублей.")

@@ -13,7 +13,7 @@ class AdditionalOptions:
 
     def __str__(self):
         return (f"\n------ Дополнительные опции ------\n"
-                f"-{"\n-".join(self.__options)}\n"
+                f"\t-{"\n\t-".join(self.__options)}\n"
                 f"Общая стоимость: {self.total_cost():,} рублей")
 
 
