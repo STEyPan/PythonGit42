@@ -51,7 +51,10 @@ class Basement(Home):
 
         return sum_input_power + basement_price + communications_price
 
-
-
-basement_1 = Basement(area=200, type_basement="свайный",input_power=2000, communications=["Вода", "Газ"])
-print(basement_1.total_cost())
+    def __str__(self):
+        return (f"\n------ Подвал ------\n"
+                f"Тип фундамента: {self.__type_basement}\n"
+                f"Подводимые коммуникации:\n"
+                f"-{"\n-".join(self.__communications)}\n"
+                f"Мощность входной электрики: {self._input_power} к/ват\n"
+                f"Общая стоимость: {self.total_cost():,} рублей.")
