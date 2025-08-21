@@ -16,15 +16,15 @@ connective, addr = soc.accept()
 
 while True:
 
-    print(f"Установлено новое соединение: {addr}")
+    # print(f"Установлено новое соединение: {addr}")
     data = ""
     dataBinary = connective.recv(1024)
     if not dataBinary:
         break
 
     data += dataBinary.decode()
-    print(f"Пришли следующие данные: {data}")
-    message = input()
+    print(f"Клиент: {data}")
+    message = input("Сервер: ")
 
     if message == "quit":
         connective.close()
