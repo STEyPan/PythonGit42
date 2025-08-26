@@ -67,3 +67,5 @@ class Server:
         if self.__socketServer:
             self.__socketServer.close()
 
+server_1 = Server("127.0.0.1", 54045)
+server_1.job()
