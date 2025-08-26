@@ -6,7 +6,7 @@
 
 import socket
 
-ipAdress = "127.0.0.1" #"localhost", но лучше конкретный IP
+ipAdress = "192.168.3.2" #"localhost", но лучше конкретный IP
 port = 48084 # до 1024 порта запрещенно использовать без режима привелегий
 
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

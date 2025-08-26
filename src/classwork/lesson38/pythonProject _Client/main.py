@@ -1,6 +1,6 @@
 import socket
 
-ipServer = "127.0.0.1"
+ipServer = "192.168.3.2"
 port = 48084
 sockClient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sockClient.connect((ipServer, port))
