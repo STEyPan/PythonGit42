@@ -4,9 +4,22 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse(f"<h1>Это страница исходная</h1>"
-                        f"<a href={"hello"}> Перейти на страницу Hello</a>")
+    response = HttpResponse()
+    response.write(f"<h1>Это страница исходная</h1>"
+                        f"<a href={"hello"}> Перейти на страницу Hello</a>"
+                        f"</br>"
+                        f"<a href={"about"}> Перейти на страницу About</a>")
+
+    # response.status_code = 200
+    # response.headers["content-type"] = "text/html; charset=utf-8"
+
+    return response
 
 def hello_world(request):
     return HttpResponse(f"<h1>Hello World</h1>"
+                        f"<a href={"../"}>Назад</a>")
+
+def about_us(request):
+    style = 'color:red;'
+    return HttpResponse(f"<h1 style='{style}'>Hello On Our Site!</h1>"
                         f"<a href={"../"}>Назад</a>")
