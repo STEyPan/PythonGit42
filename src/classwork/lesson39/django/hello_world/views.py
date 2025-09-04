@@ -42,3 +42,7 @@ def about_us(request):
     style = 'color:red;'
     return HttpResponse(f"<h1 style='{style}'>Hello On Our Site!</h1>"
                         f"<a href={"../"}>Назад</a>")
+
+def sayHello(request: HttpRequest):
+    print(request.body)
+    r
