@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Board from './Board';
+import SimpleForm from './SimpleForm';
 import { calculateWinner } from './utils';
 import './App.css';
 
@@ -29,6 +30,8 @@ const App = () => {
       </div>
       <Board squares={board} onClick={handleClick} />
       <button onClick={resetGame}>Reset Game</button>
+      <br />
+      <SimpleForm />
     </div>
   );
 };
