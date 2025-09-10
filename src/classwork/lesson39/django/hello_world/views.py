@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest, JsonResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
 
 # Create your views here.
 
@@ -13,6 +16,8 @@ def index(request: HttpRequest):
                         f"<a href={"hello"}> Перейти на страницу Hello</a>"
                         f"</br>"
                         f"<a href={"about"}> Перейти на страницу About</a>"
+                        f"</br>"
+                        f"<a href={"players"}> Перейти на страницу Players</a>"
                         f"</br>"
                         f"User agent: {user_agent} </br>"
                         f"User host: {user_addr} </br>"
@@ -45,4 +50,12 @@ def about_us(request):
 
 def sayHello(request: HttpRequest):
     print(request.body)
-    r
+    return request.body
+
+@api_view(['GET','POST'])
+def players_data(request):
+    player_x = request.data.get("playerX")
+    player_o = request.data.get("playerO")
+
+    return HttpResponse(f"Игроки: {request.data} {player_x} и {player_o}")
+

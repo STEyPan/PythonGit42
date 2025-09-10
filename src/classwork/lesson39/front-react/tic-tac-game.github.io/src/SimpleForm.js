@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function SimpleForm() {
     const [formData, setFormData] = useState({playerX:'', playerO: ''});
@@ -8,9 +9,14 @@ function SimpleForm() {
         setFormData({...formData, [name]: value});
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Отправленные данные: ', formData)
+        try {
+            const response = await axios.post('http://localhost:8000/players', formData);
+            console.log("Ответ сервера: ",response.data);
+        } catch (error) {
+            console.log("Ошибка при отправке данных: ",error);
+        }
     };
 
     return (

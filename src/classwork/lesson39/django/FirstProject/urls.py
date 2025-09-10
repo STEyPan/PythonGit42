@@ -10,4 +10,5 @@ urlpatterns = [
     path('user/<str:name>', view.user),
     re_path(r'user/', view.user),
     path("agent", view.agent),
+    path("players", view.players_data),
 ]
