@@ -57,5 +57,5 @@ def players_data(request):
     player_x = request.data.get("playerX")
     player_o = request.data.get("playerO")
 
-    return HttpResponse(f"Игроки: {request.data} {player_x} и {player_o}")
+    return Response(f"{request.data}")
 
